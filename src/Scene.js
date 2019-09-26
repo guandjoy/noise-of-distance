@@ -7,7 +7,7 @@ import useDebounce from "./misc/useDebounce";
 
 function Scene(props) {
   const [depth, setDepth] = useState(1);
-  const debouncedDepth = useDebounce(depth, depth * 200);
+  // const debouncedDepth = useDebounce(depth, depth * 200);
   const updateDepth = factor => {
     setDepth(depth => {
       let result = depth + factor;
@@ -19,7 +19,7 @@ function Scene(props) {
   return (
     <div className="scene">
       <ControlPanel depth={depth} updateDepth={updateDepth} />
-      <Composition depth={debouncedDepth} />
+      <Composition depth={depth} />
     </div>
   );
 }
