@@ -13,7 +13,7 @@ function App() {
       <a href="https://github.com/guandjoy/sequence-of-polygons">
         <GitHubLogo />
       </a>
-      <Caption topic="Noise of distance" />
+      <Caption topic="Noise of distanceeee" />
       <Composition />
     </div>
   );
