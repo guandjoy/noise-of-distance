@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Scene />
-      <a href="https://github.com/guandjoy/sequence-of-polygons">
+      <a href="https://github.com/guandjoy/noise-of-distance">
         <GitHubLogo />
       </a>
       <Caption topic="Noise of distance" />
