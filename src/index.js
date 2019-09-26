@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import GitHubLogo from "./GitHubLogo";
-import Caption from "./Caption";
+import GitHubLogo from "./misc/GitHubLogo";
+import Caption from "./misc/Caption";
 import Composition from "./Composition";
 
 import "./styles.css";
