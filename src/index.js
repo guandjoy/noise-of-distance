@@ -4,8 +4,10 @@ import ReactDOM from "react-dom";
 import GitHubLogo from "./misc/GitHubLogo";
 import Caption from "./misc/Caption";
 import Composition from "./Composition";
+import Scene from "./Scene";
 
 import "./styles.css";
+import "@material/react-button/dist/button.css";
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
         <GitHubLogo />
       </a>
       <Caption topic="Noise of distance" />
-      <Composition />
+      <Scene />
     </div>
   );
 }

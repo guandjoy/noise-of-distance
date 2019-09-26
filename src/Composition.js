@@ -1,17 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { morphing, spacing } from "primitivo-svg";
 
-function Composition(props) {
-  const [numOfSegments, setNumOfSegments] = useState(2);
-  const handleMouseMove = e => {
-    console.log("e", e.clientX);
-    setNumOfSegments(window.innerWidth / e.clientX);
-  };
-  console.log("num of segments", numOfSegments);
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+function Composition({ numOfSegments }) {
   const generatePathParams = () => {
     let numOfKeyPaths = 40;
     var groups = [];
@@ -63,20 +53,25 @@ function Composition(props) {
     progression,
     keySplines: "0.25, 0, 0.75, 1"
   });
+
   const morphParams = {
     numOfKeyPaths,
     loop: true
   };
+
   const values = () => morphing(morphParams, pathParams).dValues;
+
   const strokePath = {
     stroke: "white",
     fill: "transparent",
     strokeWidth: "0.5px",
     vectorEffect: "non-scaling-stroke"
   };
+
   const solidPath = {
     fill: "white"
   };
+
   const animateProps = {
     attributeName: "d",
     dur: "10s",
@@ -86,6 +81,7 @@ function Composition(props) {
     repeatCount: "indefinite",
     values: values()
   };
+
   return (
     <svg className="composition" viewBox="0 0 100 100">
       <path id="otherpath" {...strokePath}>

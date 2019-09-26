@@ -2,9 +2,9 @@ import React from "react";
 
 function Caption(props) {
   return (
-    <h1 id="primitivo-logo">
+    <h1 id="caption">
       <a href="https://github.com/guandjoy/primitivo-svg">
-        <span>Primitivo-SVG</span>
+        <span className="primitivo">Primitivo-SVG</span>
       </a>{" "}
       | {props.topic}
     </h1>

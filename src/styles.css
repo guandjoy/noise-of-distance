@@ -3,6 +3,7 @@
 * {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  --mdc-theme-primary: rgba(255, 255, 255, 0.74);
 }
 
 body {
@@ -22,14 +23,41 @@ body {
   /* outline: 1px solid pink; */
 }
 
-.composition {
+.scene {
   position: absolute;
   top: 14vh;
   left: 16vh;
-  height: 68vh;
   /* outline: 1px solid red; */
 }
 
+/* Control panel styles */
+.control-panel {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* outline: 1px solid red; */
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0 auto;
+}
+#num-of-segments {
+  display: inline;
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-left: 8px;
+  margin-right: 8px;
+  /* outline: 1px solid red; */
+}
+
+/* Composition styles */
+.composition {
+  height: 68vh;
+}
+
+/* Caption styles */
 #github-logo {
   position: absolute;
   bottom: 4vh;
@@ -37,14 +65,12 @@ body {
   left: 84vh;
   transform: translate(-100%, 6%);
 }
-
 h1 {
   font-size: 1.2rem;
   line-height: 0;
   color: white;
 }
-
-span {
+.primitivo {
   font-weight: 700;
 }
 
@@ -53,12 +79,13 @@ a {
   text-decoration: none;
 }
 
-#primitivo-logo {
+#caption {
   position: absolute;
   left: 16vh;
   bottom: 4vh;
 }
 
+/* Screens adaptation */
 @media only screen and (orientation: portrait) {
   .App {
     height: 100vw;
@@ -66,11 +93,14 @@ a {
     /* outline: 1px solid pink; */
   }
 
-  .composition {
+  .scene {
     top: 14vw;
     left: 16vw;
-    height: 68vw;
     /* outline: 1px solid red; */
+  }
+
+  .composition {
+    height: 68vw;
   }
 
   #github-logo {
@@ -78,7 +108,7 @@ a {
     left: 84vw;
   }
 
-  #primitivo-logo {
+  #caption {
     left: 16vw;
     bottom: 4vw;
   }
@@ -93,6 +123,9 @@ a {
     width: 36px;
     transform: translate(-100%, 28%);
   }
+  #num-of-segments {
+    font-size: 0.6rem;
+  }
 }
 
 @media only screen and (max-height: 480px), (max-width: 480px) {
@@ -103,5 +136,7 @@ a {
     width: 32px;
     transform: translate(-100%, 28%);
   }
+  #num-of-segments {
+    font-size: 0.6rem;
+  }
 }
-
