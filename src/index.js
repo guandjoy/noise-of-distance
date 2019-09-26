@@ -11,11 +11,11 @@ import "@material/react-button/dist/button.css";
 function App() {
   return (
     <div className="App">
+      <Scene />
       <a href="https://github.com/guandjoy/sequence-of-polygons">
         <GitHubLogo />
       </a>
       <Caption topic="Noise of distance" />
-      <Scene />
     </div>
   );
 }
