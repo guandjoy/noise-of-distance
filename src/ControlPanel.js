@@ -1,24 +1,25 @@
 import React from "react";
 import Button from "@material/react-button";
 
-function ControlPanel({ numOfSegments, updateNumOfSegments }) {
+function ControlPanel({ depth, updateDepth }) {
   return (
     <div className="control-panel">
       <Button
         id="decrease"
         dense={true}
-        disabled={numOfSegments === 2}
+        disabled={depth === 0}
         className="material-button"
-        onClick={() => updateNumOfSegments(-1)}
+        onClick={() => updateDepth(-1)}
       >
         -
       </Button>
-      <div id="num-of-segments">{numOfSegments}</div>
+      <div id="depth">{depth}</div>
       <Button
         id="increase"
         dense={true}
+        disabled={depth === 11}
         className="material-button"
-        onClick={() => updateNumOfSegments(+1)}
+        onClick={() => updateDepth(+1)}
       >
         +
       </Button>

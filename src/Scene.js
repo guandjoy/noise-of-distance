@@ -5,23 +5,20 @@ import ControlPanel from "./ControlPanel";
 import Composition from "./Composition";
 
 function Scene(props) {
-  const [numOfSegments, setNumOfSegments] = useState(2);
+  const [depth, setDepth] = useState(0);
 
-  const updateNumOfSegments = factor => {
-    setNumOfSegments(numOfSegments => {
-      let result = numOfSegments + factor;
+  const updateDepth = factor => {
+    setDepth(depth => {
+      let result = depth + factor;
       // Limit number of segment
-      return result < 2 ? numOfSegments : result;
+      return result < 0 || result > 11 ? depth : result;
     });
   };
 
   return (
     <div className="scene">
-      <ControlPanel
-        numOfSegments={numOfSegments}
-        updateNumOfSegments={updateNumOfSegments}
-      />
-      <Composition numOfSegments={numOfSegments} />
+      <ControlPanel depth={depth} updateDepth={updateDepth} />
+      <Composition depth={depth} />
     </div>
   );
 }

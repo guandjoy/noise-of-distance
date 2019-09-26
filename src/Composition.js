@@ -1,8 +1,8 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { morphing, spacing } from "primitivo-svg";
 
-function Composition({ numOfSegments }) {
-  const generatePathParams = () => {
+function Composition({ depth }) {
+  const generatePathParams = depth => {
     let numOfKeyPaths = 40;
     var groups = [];
     for (let i = 0; i < numOfKeyPaths; i++) {
@@ -23,8 +23,8 @@ function Composition({ numOfSegments }) {
       ];
     }
     return {
-      numOfSegments,
-      depth: 0,
+      numOfSegments: 2,
+      depth,
       x: 1,
       y: 1,
       width: 98,
@@ -46,7 +46,7 @@ function Composition({ numOfSegments }) {
     return progression;
   };
 
-  const pathParams = useMemo(() => generatePathParams(), []);
+  const pathParams = useMemo(() => generatePathParams(depth), [depth]);
   const numOfKeyPaths = pathParams.groups.length;
   const progression = getProgression(numOfKeyPaths);
   const tns = spacing({
