@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 
 import GitHubLogo from "./misc/GitHubLogo";
 import Caption from "./misc/Caption";
-import Composition from "./Composition";
 import Scene from "./Scene";
 
 import "./styles.css";
