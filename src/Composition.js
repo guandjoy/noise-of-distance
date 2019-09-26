@@ -59,7 +59,18 @@ function Composition({ depth }) {
     loop: true
   };
 
-  const values = () => morphing(morphParams, pathParams).dValues;
+  const firstPath = useMemo(() => morphing(morphParams, pathParams).dValues, [
+    morphParams,
+    pathParams
+  ]);
+  const secondPath = useMemo(() => morphing(morphParams, pathParams).dValues, [
+    morphParams,
+    pathParams
+  ]);
+  const thirdPath = useMemo(() => morphing(morphParams, pathParams).dValues, [
+    morphParams,
+    pathParams
+  ]);
 
   const strokePath = {
     stroke: "white",
@@ -74,28 +85,24 @@ function Composition({ depth }) {
 
   const animateProps = {
     attributeName: "d",
-    dur: "10s",
+    dur: "7s",
     calcMode: "spline",
     keyTimes: tns.keyTimes,
     keySplines: tns.keySplines,
-    repeatCount: "indefinite",
-    values: values()
+    repeatCount: "indefinite"
   };
 
   return (
     <svg className="composition" viewBox="0 0 100 100">
       <path id="otherpath" {...strokePath}>
-        <animate {...animateProps} begin="0.5s" />
+        <animate {...animateProps} values={firstPath} />
       </path>
-      <path {...strokePath} transform="scale(0.6 0.6) translate(32 32)">
-        <animate {...animateProps} begin="0.4s" />
+
+      <path {...strokePath} transform="scale(0.6 0.6) translate(33 33)">
+        <animate {...animateProps} values={secondPath} />
       </path>
-      <path
-        {...solidPath}
-        transform="scale(0.03 0.03) translate(1580 1580)"
-        id="center-path"
-      >
-        <animate {...animateProps} />
+      <path {...solidPath} transform="scale(0.045 0.045) translate(1060 1060)">
+        <animate {...animateProps} values={thirdPath} />
       </path>
     </svg>
   );
