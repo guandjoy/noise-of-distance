@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import GitHubLogo from "./misc/GitHubLogo";
+import GitHubLink from "./misc/GitHubLink";
 import Caption from "./misc/Caption";
 import Scene from "./Scene";
 
@@ -12,9 +12,7 @@ function App() {
   return (
     <div className="App">
       <Scene />
-      <a href="https://github.com/guandjoy/noise-of-distance">
-        <GitHubLogo />
-      </a>
+      <GitHubLink />
       <Caption topic="Noise of distance" />
     </div>
   );
